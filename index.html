@@ -1,25 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>simple crystal game</title>
+  <title>Star Wars RPG</title>
 
-  <style type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css"
 
-    .crystal-image {
-      width: 300px;
-      height: 300px;
-    }
-  </style>
 
 </head>
 <body>
+  <div class="container" style="background-image: url('assets/images/swbackground.jpg');background-size: 1000px 600px;">
+      <div class="row">
+        <div class="col-md-12">
+        <h1 class="text-center">Star Wars RPG</h1>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="col-md-3" id="img1">
+            <div class="row" style="background-color: white">Obi-Wan Kenobi</div>
+            <img id="obi" src="assets/images/obiwan.png" alt="Obi Wan Kenobi" height="150px" width="150px" hp="100">
 
-  <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+          </div>
+          <div class="col-md-3" id="img2">
+            <img class="luke" src="assets/images/luke.jpeg" alt="Luke Skywalker" height="150px" width="150px" hp="150">
+          </div>
+          <div class="col-md-3" id="img3">
+            <img class="dsid" src="assets/images/dsidious.jpeg" alt="Darth Sidious" height="150px" width="150px" hp="170">
+          </div>
+          <div class="col-md-3" id="img4">
+            <img class="dmaul" src="assets/images/dmaul.jpeg" alt="Darth Maul" height="150px" width="150px" hp="110">
+          </div>
 
-  <!-- Note that this div is now empty. We will fill it dynamically -->
-  <div id="crystals">
+      </div>
+      <br>
+      <div class="row" id="yourCharacter">Your Character
+        <div class="col-md-3" id="yourChar">
+          //image of your character
+        </div>
+      </div>
+
+      //Enemies Available to Attack
+      <br>
+      <div class="row" id="enemiesAvailable">Enemies Available To Attack
+        <div class="col-md-3">
+          //image of oponents
+        </div>
+        <div class="col-md-3">
+          //image of oponents
+        </div>
+        <div class="col-md-3">
+          //image of oponents
+        </div>
+      </div>
+
+      <br>
+
+      <div class="row">
+          <button id="button-1" class="btn btn-primary"><h1>Attack</h1></button>
+          //button -attack
+      </div>
+      //Defender
+
+
+
+      <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+
+      <!-- Note that this div is now empty. We will fill it dynamically -->
+      <div id="crystals">
+      </div>
+
   </div>
-
   <!-- JAVASCRIPT  -->
   <!-- ========================================= -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

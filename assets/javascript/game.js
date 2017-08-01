@@ -21,6 +21,10 @@ for (var i = 0; i < numberOptions.length; i++) {
 
   // Each imageCrystal will be given a src link to the crystal image
   imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
+  imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
+  imageCrystal.attr("height", "200px");
+  imageCrystal.attr("width", "200px");
+  imageCrystal.attr("style", "border-style: solid; border-width: 5px;");
 
   // Each imageCrystal will be given a data attribute called data-crystalValue.
   // This data attribute will be set equal to the array value.
@@ -32,7 +36,7 @@ for (var i = 0; i < numberOptions.length; i++) {
 
 // This time, our click event applies to every single crystal on the page. Not just one.
 $(".crystal-image").on("click", function() {
-
+  $("#img1").appendTo("#yourChar");
   // Determining the crystal's value requires us to extract the value from the data attribute.
   // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
   // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
@@ -54,5 +58,28 @@ $(".crystal-image").on("click", function() {
   else if (counter >= targetNumber) {
     alert("You lose!!");
   }
+
+});
+
+var ObiWon = {
+  hp: "100",
+  name: "Obi-One-Kenobi",
+}
+
+var enemies = {
+  ObiOneKenobi:[100,25,15],
+  DarthMaul: [120,25,10],
+  DarthSidious: [150,30,15],
+  LukeSkywalker: [120,20,20]
+};
+// This time, our click event applies to every single crystal on the page. Not just one.
+$("#obi").on("click", function() {
+  $("#obi").appendTo("#yourChar");
+  console.log(this);
+  console.log(enemies.ObiOneKenobi);
+  // Determining the crystal's value requires us to extract the value from the data attribute.
+  //
+  //imageCrystal.attr("HP", hpList[i]);
+  var enemies=[];
 
 });

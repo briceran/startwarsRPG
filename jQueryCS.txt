@@ -1,0 +1,19 @@
+jQuery Cheat Sheet
+
+$(document).ready()(function() {
+
+});
+
+
+$("div.demo-container" ).html();  # retrieve contents of an element (firrst match)
+
+
+$("div.demo-container").txt #string containing the combined text of all matched elements. 
+
+
+
+
+
+
+
+
