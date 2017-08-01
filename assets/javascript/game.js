@@ -1,85 +1,88 @@
-var targetNumber = 53;
+$(document).ready(function(){
+  //hp,attack,defend,name
+  var enemies = {
+    obi:[120,25,15,"Obi-One-Kenobi"],
+    luke: [100,25,10,"Luke Skywalker"],
+    dsid: [150,30,15,"Darth Sidious"],
+    dmaul: [180,20,20,"Darth Maul"]
+  };
 
-$("#number-to-guess").text(targetNumber);
 
-var counter = 0;
+  var character="";
+  // This time, our click event applies to every single crystal on the page. Not just one.
+  var staged = false;
 
-// Now for the hard part. Creating multiple crystals each with their own unique number value.
 
-// We begin by expanding our array to include four options.
-var numberOptions = [10, 5, 3, 7];
+  $("#obi").on("click", function() {
+    var jediTag = $("#obi");
+    jediTag.appendTo("#yourChar");
+    jediTag.css('border', "solid 2px green");
+    character="obi";
+    staged=true;
+    fight(character,jediTag);
 
-// Next we create a for loop to create crystals for every numberOption.
-for (var i = 0; i < numberOptions.length; i++) {
 
-  // For each iteration, we will create an imageCrystal
-  var imageCrystal = $("<img>");
+  });
 
-  // First each crystal will be given the class ".crystal-image".
-  // This will allow the CSS to take effect.
-  imageCrystal.addClass("crystal-image");
 
-  // Each imageCrystal will be given a src link to the crystal image
-  imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
-  imageCrystal.attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
-  imageCrystal.attr("height", "200px");
-  imageCrystal.attr("width", "200px");
-  imageCrystal.attr("style", "border-style: solid; border-width: 5px;");
+  $("#luke").on("click", function() {
+    var jediTag = $("#luke");
+    jediTag.appendTo("#yourChar");
+    jediTag.css('border', "solid 2px green");
+    character="luke";
+    staged=true;
+    fight(character, jediTag);
 
-  // Each imageCrystal will be given a data attribute called data-crystalValue.
-  // This data attribute will be set equal to the array value.
-  imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
-  // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-  $("#crystals").append(imageCrystal);
-}
+  });
 
-// This time, our click event applies to every single crystal on the page. Not just one.
-$(".crystal-image").on("click", function() {
-  $("#img1").appendTo("#yourChar");
-  // Determining the crystal's value requires us to extract the value from the data attribute.
-  // Using the $(this) keyword specifies that we should be extracting the crystal value of the clicked crystal.
-  // Using the .attr("data-crystalvalue") allows us to grab the value out of the "data-crystalvalue" attribute.
-  // Since attributes on HTML elements are strings, we must convert it to an integer before adding to the counter
+  $("#dsid").on("click", function() {
+    var jediTag = $("#dsid");
+    jediTag.appendTo("#yourChar");
+    jediTag.css('border', "solid 2px green");
+    character="dsid";
+    staged=true;
+    fight(character, jediTag);
 
-  var crystalValue = ($(this).attr("data-crystalvalue"));
-  crystalValue = parseInt(crystalValue);
-  // We then add the crystalValue to the user's "counter" which is a global variable.
-  // Every click, from every crystal adds to the global counter.
-  counter += crystalValue;
 
-  // All of the same game win-lose logic applies. So the rest remains unchanged.
-  alert("New score: " + counter);
+  });
 
-  if (counter === targetNumber) {
-    alert("You win!");
+  $("#dmaul").on("click", function() {
+    var jediTag = $("#dmaul");
+    jediTag.appendTo("#yourChar");
+    jediTag.css('border', "solid 2px green");
+
+      character="dmaul";
+      staged=true;
+      fight(character, jediTag);
+
+  });
+
+  //character chosen
+  //begin game
+  function fight(challenger,tag) {
+    currentHP =100;
+    currentAtt=10;
+    currentCtr=10;
+
+    //add enemies to proper section in DOM
+    console.log("You are: " + challenger);
+
+    for (var key in enemies) {
+      if (enemies.hasOwnProperty(key) && key!== challenger) {
+
+        console.log(key + " -> " + enemies[key]);
+        //add enemy to enemiesAvailable
+        var selector = "#" +key;
+        var div = $(selector);
+        div.appendTo("#enemiesAvailable");
+        div.css('border', "solid 2px red");
+
+      }
+    }
+
   }
 
-  else if (counter >= targetNumber) {
-    alert("You lose!!");
-  }
 
-});
-
-var ObiWon = {
-  hp: "100",
-  name: "Obi-One-Kenobi",
-}
-
-var enemies = {
-  ObiOneKenobi:[100,25,15],
-  DarthMaul: [120,25,10],
-  DarthSidious: [150,30,15],
-  LukeSkywalker: [120,20,20]
-};
-// This time, our click event applies to every single crystal on the page. Not just one.
-$("#obi").on("click", function() {
-  $("#obi").appendTo("#yourChar");
-  console.log(this);
-  console.log(enemies.ObiOneKenobi);
-  // Determining the crystal's value requires us to extract the value from the data attribute.
-  //
-  //imageCrystal.attr("HP", hpList[i]);
-  var enemies=[];
-
+console.log("end");
 });
