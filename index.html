@@ -16,21 +16,35 @@
         <h1 class="text-center">Star Wars RPG</h1>
         </div>
       </div>
-      <br>
+
       <div class="row">
           <div class="col-md-12">
-            <div class="row" style="background-color: white">Obi-Wan Kenobi</div>
-            <img id="obi" src="assets/images/obiwan.png" alt="Obi Wan Kenobi" height="100px" width="100px" hp="100">
 
-            <img id="luke" src="assets/images/luke.jpeg" alt="Luke Skywalker" height="100px" width="100px" hp="100">
+          <div id="obi" style="display:inline-block; height:155px; width:110px; background-color:white;"><p>Obi-One-Kenobi</p>
+            <img src="assets/images/obiwan.png" alt="Obi Wan Kenobi" height="100px" width="100px" hp="100">
+            <p id=HPobi class="text-center" style="background-color:white;">120</p>
+          </div>
 
-            <img id="dsid" src="assets/images/dsidious.jpeg" alt="Darth Sidious" height="100px" width="100px" hp="170">
+          <div id="luke" style="display:inline-block; height:155px; width: 110px;background-color:white;"><p>Luke Skywalker</p>
+            <img src="assets/images/luke.jpeg" alt="Luke Skywalker" height="100px" width="100px" hp="100">
+            <p id=HPluke class="text-center" style="background-color:white;">100</p>
+          </div>
 
-            <img id="dmaul" src="assets/images/dmaul.jpeg" alt="Darth Maul" height="100px" width="100px" hp="110">
+          <div id="dsid" style="display:inline-block; height:155px; width: 110px;background-color:white;"><p>Darth Sidious</p>
+            <img src="assets/images/dsidious.jpeg" alt="Darth Sidious" height="100px" width="100px" hp="100">
+            <p id=HPdsid class="text-center" style="background-color:white;">150</p>
+          </div>
+
+          <div id="dmaul" style="display:inline-block; height:155px; width: 110px;background-color:white;"><p>Darth Maul</p>
+            <img src="assets/images/dmaul.jpeg" alt="Darth Maul" height="100px" width="100px" hp="100">
+            <p id=HPdmaul class="text-center" style="background-color:white;">180</p>
+          </div>
+
+
           </div>
 
       </div>
-      <br>
+
       <div class="row" id="yourCharacter"><h2>Your Character</h2>
         <div class="col-md-3" id="yourChar">
 
@@ -38,22 +52,21 @@
       </div>
 
 
-      <br>
       <div class="row" id="enemiesAvailable"><h2>Enemies Available To Attack</h2>
 
       </div>
 
-      <br>
-
       <div class="row">
-          <button id="button-1" class="btn btn-primary"><h1>Attack</h1></button>
-          //button -attack
+          <button id="button-1" class="btn btn-danger btn-sm"><h4>Attack</h4></button>
+
       </div>
-      //Defender
+      <div class="row" id="Defender"><h2>Defender</h2>
+
+      </div>
 
 
 
-      <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+      <h5 id="battleText" style="color: white; background-color: black;"></h5>
 
 
 
